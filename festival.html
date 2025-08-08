@@ -43,7 +43,7 @@
         this.y = y;
         this.color = color;
         this.radius = Math.random() * 12 + 4; // Bigger size range
-        const angle = Math.random() * 2 * Math.PI; // random direction
+        const angle = Math.random() * 3 * Math.PI; // random direction
         const speed = Math.random() * 6 + 3; // Faster burst
         this.speedX = Math.cos(angle) * speed;
         this.speedY = Math.sin(angle) * speed;
@@ -54,7 +54,7 @@
         this.y += this.speedY;
         this.speedX *= 0.96; // slow down
         this.speedY *= 0.96;
-        this.alpha -= 0.015;
+        this.alpha -= 0.0015;
       }
       draw() {
         ctx.globalAlpha = this.alpha;
@@ -86,7 +86,7 @@
       requestAnimationFrame(animate);
     }
 
-    window.addEventListener('mousemove', (e) => {
+    window.addEventListener('click', (e) => {
       createParticles(e.clientX, e.clientY);
     });
 
